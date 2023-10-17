@@ -2,7 +2,6 @@
 add_executable(shell-app
   # list of source cpp files:
   main.cpp
-  PIDController.cpp
   )
 
 # Any include directories needed to build this target.

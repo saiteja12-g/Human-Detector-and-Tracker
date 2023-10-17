@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ## Student Details
 
-|Name|Sai Teja Gilukara|Akash Parmar|
+|Name|Sai Teja Gilukara(Driver)|Akash Parmar(Navigator)|
 |---|:---:|:---:|
 |UID|119369623|118737430|
 |Directory ID|saitejag|akasparm|

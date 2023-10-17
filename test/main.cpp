@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
 #include "lib.hpp"
-#include "lib1.hpp"
 
 void function_not_used() {
   dummy();

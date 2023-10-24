@@ -3,14 +3,12 @@
 #define INCLUDE_DETECTOR_HPP_
 
 #include <memory>
-#include <string>
-#include <vector>
-
 #include <opencv2/dnn/dnn.hpp>
 #include <opencv2/dnn/shape_utils.hpp>
 #include <opencv2/opencv.hpp>
-
+#include <string>
 #include <utils.hpp>
+#include <vector>
 
 namespace acme_robotics {
 
@@ -19,8 +17,8 @@ class Detector {
   Detector();
   ~Detector();
   void FilterData();
-  int DetectObject();
-  
+  double DetectObject();
+
  private:
   double object_height_;
   double object_width_;

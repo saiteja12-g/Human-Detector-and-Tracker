@@ -1,42 +1,59 @@
+/**
+ * @file utils.cpp
+ * @brief Implementation of utility functions
+ *
+ * This file contains the implementation of utility functions in the
+ * `acme_robotics` namespace. These utilities provide various functionalities,
+ * such as tracking, image manipulation, and conversion of pixel data to depth
+ * information.
+ *
+ * @author Sai Teja Gilukara (Driver) (saitejag@umd.edu)
+ * @author Akashkumar Parmar (Navigator) (akasparm@umd.edu)
+ * @version 0.1
+ * @date 2023-10-23
+ *
+ * @copyright Copyright (c) 2023
+ */
+
+#include <../include/utils.hpp>
 #include <opencv2/core/types.hpp>
 #include <opencv2/imgproc.hpp>
-#include <../include/utils.hpp>
 
-cv::Mat acme_robotics::Utils::GetBB(cv::Mat i, const cv::Rect &b, const std::string &l) {
-    cv::Mat frame = i.clone();
-    cv::Scalar color = cv::Scalar(0, 0, 255);
-    cv::Scalar l_color = cv::Scalar::all(255);
+namespace acme_robotics {
 
-    int f_face(0);
-
-    double f_scale(1);
-
-    cv::Point l_pt;
-    cv::Point top_pt;
-    cv::Point bottom_pt;
-    int b_line(0);
-    cv::Size l_size;
-    cv::rectangle(frame, b, color, 2, cv::LINE_AA);
-    l_size = cv::getTextSize(l, f_face, f_scale, 2, &b_line);
-    top_pt = cv::Point(b.x, b.y);
-    bottom_pt = cv::Point(b.x + l_size.width, b.y + l_size.height);
-    l_pt = cv::Point(b.x, b.y);
-    cv::rectangle(frame, top_pt, bottom_pt, color, -1, 16);
-    cv::putText(frame, l, l_pt, f_face, f_scale, l_color, 2);
-    return frame;
+// Implementation of the TrackNextPoint function
+/**
+ * @brief Track the next point in the bounding box.
+ *
+ * This function calculates the next point to track within a bounding box.
+ *
+ * @param bbox The bounding box to track within.
+ * @return The calculated point to track.
+ */
+cv::Point Utils::TrackNextPoint(const cv::Rect &bbox) {
+  int x_center = bbox.width / 2 + bbox.x;
+  int y_center = bbox.height / 2 + bbox.y;
+  return cv::Point(x_center, y_center);
 }
 
-cv::Point acme_robotics::Utils::TrackNextPoint(const cv::Rect &bbox) {
-    int x_center = bbox.width / 2 + bbox.x;
-    int y_center = bbox.height / 2 + bbox.y;
-    return cv::Point(x_center, y_center);
+// Implementation of the PixelsToDepth function
+/**
+ * @brief Convert pixel data to depth information.
+ *
+ * This function converts pixel data from a bounding box to depth information
+ * based on a calibration factor.
+ *
+ * @param b The bounding box containing pixel data.
+ * @param calib_factor The calibration factor to use for the conversion.
+ * @return The calculated depth information.
+ */
+acme_robotics::Pose Utils::PixelsToDepth(const cv::Rect &b,
+                                         double calib_factor) {
+  double height = b.height;
+  double calib_distance = calib_factor / height;
+  cv::Point centre = acme_robotics::Utils::TrackNextPoint(b);
+
+  return acme_robotics::Pose(calib_distance, centre.x, centre.y);
 }
 
-acme_robotics::Pose acme_robotics::Utils::PixelsToDepth(const cv::Rect &b, double calib_factor) {
-    double height = b.height;
-    double calib_distance = calib_factor / height;
-    cv::Point centre = acme_robotics::Utils::TrackNextPoint(b);
-
-    return acme_robotics::Pose(calib_distance, centre.x, centre.y);
-}
-
+}  // namespace acme_robotics

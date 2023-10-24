@@ -1,14 +1,12 @@
 #ifndef INCLUDE_UTILS_HPP_
 #define INCLUDE_UTILS_HPP_
 
-#include "opencv2/core/mat.hpp"
+#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 #include <string>
 #include <vector>
 
-
-#include <opencv2/core.hpp>
-#include <opencv2/opencv.hpp>
-
+#include "opencv2/core/mat.hpp"
 
 namespace acme_robotics {
 

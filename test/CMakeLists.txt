@@ -3,6 +3,10 @@ add_executable(cpp-test
   # list of source cpp files:
   main.cpp
   test.cpp
+  ../app/detector.cpp
+  ../app/tracker.cpp
+  ../app/pose_estimater.cpp
+  ../app/utils.cpp
   )
 
 # Any include directories needed to build this target.

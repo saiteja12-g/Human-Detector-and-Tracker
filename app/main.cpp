@@ -1,7 +1,6 @@
 #include <iostream>
-#include "../include/lib.hpp"
+// #include "../include/.hpp"
 
 int main(){
-    dummy();
     return 0;
 }

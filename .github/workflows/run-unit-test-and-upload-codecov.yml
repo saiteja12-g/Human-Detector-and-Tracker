@@ -17,11 +17,11 @@ name: Run Unit Test and Upload Coverage Report
 on:
   # Triggered whenever push to main 
   push:
-    branches: [ "main" ]
+    branches: [ "development_branch" ]
 
   # Triggered whenever a pull request is created on main
   pull_request:
-    branches: [ "main" ]
+    branches: [ "development_branch" ]
     types: [opened]
 
   # Allow manual trigger
@@ -36,6 +36,12 @@ jobs:
     steps:
       # We want to use GitHub CI checkout version 3 to check out our branch
       - uses: actions/checkout@v3
+
+      # Install OpenCV
+      - name: install opencv 
+        run: |   
+            sudo apt-get install libopencv-dev 
+            sudo apt-get install libopencv-contrib-dev
       
       # Install some system pacakges
       - name: Install build packages

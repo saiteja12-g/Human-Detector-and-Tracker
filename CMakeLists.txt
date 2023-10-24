@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(scratch)
+project(human-detector-tracker)
 
 #
 # GoogleTest Setup
@@ -28,6 +28,12 @@ include(GoogleTest)
 # Doxygen Support check if Doxygen is installed
 # ref: https://cmake.org/cmake/help/latest/module/FindDoxygen.html
 #
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+# include_directories(${OpenCV_EXTRA_MODULES_PATH})
+# add_executable(human-detector-tracker app/main.cpp)
+
 find_package(Doxygen)
 if ( DOXYGEN_FOUND )
   set( DOXYGEN_OUTPUT_DIRECTORY     ${PROJECT_SOURCE_DIR}/docs )

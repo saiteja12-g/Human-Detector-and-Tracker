@@ -34,4 +34,4 @@ The goal of this project is detect and track humans and get the pose estimation 
 |UML Diagram|[here](/UML/initial/UML%20class.pdf)|
 |Flow Chart|[here](/Proposal/Flowchart.pdf)|
 |AIP Sheet|[here](https://docs.google.com/spreadsheets/u/0/d/1XzHJKPvlp2NBZCuSRj7cfIvq3t03doPlDkwKnDLFQbU/edit?pli=1#gid=1967651968)|
-|Videos|[here](https://drive.google.com/file/d/1OkrgV8vrO6jH2VACrxxc4w38uIurhblW/view?usp=share_link)|
+|Videos|[here](https://drive.google.com/drive/folders/1_GK_JMNFahxSQeobAj8jg4wJFANAf9b8?usp=sharing)|

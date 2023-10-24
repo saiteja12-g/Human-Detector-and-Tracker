@@ -1,0 +1,22 @@
+digraph "include/utils.hpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/utils.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="app/utils.cpp",height=0.2,width=0.4,color="black",URL="$utils_8cpp.html",tooltip="Implementation of utility functions."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="include/detector.hpp",height=0.2,width=0.4,color="black",URL="$detector_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="app/detector.cpp",height=0.2,width=0.4,color="black",URL="$detector_8cpp.html",tooltip="Implementation of the Detector class for object detection."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="include/tracker.hpp",height=0.2,width=0.4,color="black",URL="$tracker_8hpp.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="app/tracker.cpp",height=0.2,width=0.4,color="black",URL="$tracker_8cpp.html",tooltip="Implementation of the Tracker class for pose tracking."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="include/pose_estimater.hpp",height=0.2,width=0.4,color="black",URL="$pose__estimater_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="app/pose_estimater.cpp",height=0.2,width=0.4,color="black",URL="$pose__estimater_8cpp.html",tooltip="Implementation of the pose_estimater class."];
+}

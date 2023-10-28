@@ -25,6 +25,27 @@ The goal of this project is detect and track humans and get the pose estimation 
 |OpenCV|Default|
 |memory|Default|
 
+## Instructions to run the program locally
+
+## Standard install and build via command-line
+```
+git clone --recursive https://github.com/saiteja12-g/Human-Detector-and-Tracker.git
+cd Human-Detector-and-Tracker
+cmake -S ./ -B build/
+cmake --build build/
+./build/app/shell-app
+```
+
+## Run tests
+```
+ctest --test-dir build/
+```
+
+## Create Doxygen docs
+```
+cmake --build build/ --target docs
+``` 
+
 ## Links
 
 |Item|Link|

@@ -23,7 +23,6 @@ The goal of this project is detect and track humans and get the pose estimation 
 |---|:---:|
 |C++|14|
 |OpenCV|Default|
-|memory|Default|
 
 ## Instructions to run the program locally
 

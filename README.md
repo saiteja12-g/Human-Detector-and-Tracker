@@ -60,6 +60,10 @@ cd Human-Detector-and-Tracker
   cmake --build build/ --target docs
   ```
 
+## Outputs
+<!-- ![Output](Phase0/output.gif) -->
+![alt text](phase0/output.gif?raw=true)
+
 ## Links
 
 |Item|Link|

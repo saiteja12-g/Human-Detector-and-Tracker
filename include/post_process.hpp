@@ -55,6 +55,10 @@ class Postprocess : public Preprocess, public Bbox {
     std::vector<float> confidence_list;
     std::vector<cv::Rect> bounding_boxes;
 
+    if (preprocess_outputs.empty()) {
+      return instantaneous_frame;
+    }
+
     float col_factor = instantaneous_frame.cols / INPUT_WIDTH;
     float row_factor = instantaneous_frame.rows / INPUT_HEIGHT;
 

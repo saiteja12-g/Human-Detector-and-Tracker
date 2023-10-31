@@ -35,28 +35,26 @@ cd Human-Detector-and-Tracker
 #### Configure the project and generate a native build system:
   #### Must re-run this command whenever any CMakeLists.txt file has been changed.
   ```
-  mkdir build/ && cd build/
+  cmake -S ./ -B build/
   ```
 
 #### Compile and build the project:
   #### rebuild only files that are modified since the last build
   ```
-  cmake ..
-  make
+  cmake --build build/
   ```
 #### Run tests:
   ```
-  ./test/human-detector-tracker-test
+  ctest --test-dir build/
   ```
 
 #### Try out the live feed:
   ```
-  ./app/human-detector-tracker
+  ./build/app/human-detector-tracker
   ```
 
 #### Create Doxygen docs
   ```
-  cd ..
   cmake --build build/ --target docs
   ```
 

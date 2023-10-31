@@ -14,8 +14,8 @@
  *
  */
 #include <fstream>
-#include <vector>
 #include <iostream>
+#include <vector>
 #include <opencv2/opencv.hpp>
 
 #include "./../include/post_process.hpp"
@@ -51,7 +51,7 @@ std::vector<std::string> ReadClassNames(const std::string& file_path) {
 int main() {
   // Read class names from a file
   std::vector<std::string> classes =
-      ReadClassNames("../app/resources/coco.names");
+      ReadClassNames("app/resources/coco.names");
 
   // Open a video capture device (e.g., the default camera)
   cv::VideoCapture cap(0);
@@ -65,7 +65,7 @@ int main() {
 
     // Load a pre-trained YOLO model
     cv::dnn::Net model =
-        cv::dnn::readNet("../app/resources/models/yolov5s.onnx");
+        cv::dnn::readNet("app/resources/models/yolov5s.onnx");
 
     // Perform preprocessing on the frame
     Preprocess pre_obj;

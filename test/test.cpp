@@ -16,12 +16,27 @@
 #include <opencv2/opencv.hpp>
 
 #include "./../include/bbox.hpp"
+#include "./../include/post_process.hpp"
+#include "./../include/pre_process.hpp"
 
-cv::Mat img1 = cv::imread("./../resources/sample1.jpg");
-cv::Mat img2 = cv::imread("./../resources/sample2.jpg");
-cv::Mat img3 = cv::imread("./../resources/sample3.jpg");
-cv::Mat img4 = cv::imread("./../resources/sample4.jpg");
-cv::Mat img5 = cv::imread("./../resources/sample5.jpg");
+cv::Mat img1 = cv::imread("./../app/resources/sample1.jpg");
+cv::Mat img2 = cv::imread("./../app/resources/sample2.jpg");
+cv::Mat img3 = cv::imread("./../app/resources/sample3.jpg");
+cv::Mat img4 = cv::imread("./../app/resources/sample4.jpg");
+cv::Mat img5 = cv::imread("./../app/resources/sample5.jpg");
+
+cv::Mat testImage = img1;
+
+// Create an instance of the Preprocess class
+Preprocess preprocessor;
+
+cv::dnn::Net model;
+
+std::vector<cv::Mat> processedFrames =
+    preprocessor.pre_process(testImage, model);
+
+// cv::dnn::Net testNet =
+// cv::dnn::readNet("./../resources/models/yolov5s.onnx");
 
 /**
  * @brief Test case - 1
@@ -87,4 +102,40 @@ TEST(Test6, testLabel) {
   int left = 20;
   Bbox obj;
   ASSERT_NO_THROW(obj.bbox(img5, bounding_box_label, left, top));
+}
+
+TEST(Test7, PreprocessTest) {
+  // Load an image for testing
+
+  // // Call the pre_process function and get the output
+
+  // Add your test assertions here
+  // For example, you can check the size of the processedFrames vector
+  // and whether the Mat objects in the vector have the expected properties.
+
+  // Example assertions:
+  ASSERT_TRUE(
+      processedFrames.empty());  // No frames should be produced without a model
+  // You can add more specific checks based on the behavior of your
+  // pre-processing function.
+}
+
+TEST(Test8, PostprocessTest) {
+  std::vector<std::string> classNames = {"person"};
+
+  // Create an instance of the Postprocess class
+  Postprocess postprocessor;
+
+  // Call the post_process function to process the test image
+  cv::Mat processedImage =
+      postprocessor.post_process(img1, processedFrames, classNames);
+
+  // Add your test assertions here to verify if the output matches the expected
+  // result You can compare the processedImage to the expectedOutput
+
+  // ASSERT_TRUE(cv::countNonZero(cv::abs(processedImage - expectedOutput)) ==
+  // 0);
+  ASSERT_TRUE(processedImage.empty());
+  // You can add more specific checks based on the expected behavior of your
+  // post-processing logic.
 }

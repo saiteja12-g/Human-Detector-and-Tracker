@@ -1,4 +1,0 @@
-<map id="Postprocess::post_process" name="Postprocess::post_process">
-<area shape="rect" id="node1" title="The retrieved video frame, detection outputs and eteciton class list are provided as input to this fu..." alt="" coords="5,5,199,32"/>
-<area shape="rect" id="node2" href="$classBbox.html#a752462de85ff0cfa66679be9e8fe9175" title="Assigns label with class ID, draws a bounding box around the detected object." alt="" coords="247,5,341,32"/>
-</map>

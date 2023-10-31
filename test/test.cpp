@@ -22,7 +22,6 @@ cv::Mat img2 = cv::imread("./../resources/sample2.jpg");
 cv::Mat img3 = cv::imread("./../resources/sample3.jpg");
 cv::Mat img4 = cv::imread("./../resources/sample4.jpg");
 cv::Mat img5 = cv::imread("./../resources/sample5.jpg");
-cv::dnn::Net net = cv::dnn::readNet("./../app/resources/models/yolov5s.onnx");
 
 /**
  * @brief Test case - 1

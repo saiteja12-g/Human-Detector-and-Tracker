@@ -1,4 +1,0 @@
-<map id="Preprocess::pre_process" name="Preprocess::pre_process">
-<area shape="rect" id="node1" title="Retrieved video frame is provided as input to yolov5s model and detections are extracted for post&#45;pro..." alt="" coords="108,5,287,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function implementation for loading the object detection class list. Takes the live video feed f..." alt="" coords="5,5,60,32"/>
-</map>

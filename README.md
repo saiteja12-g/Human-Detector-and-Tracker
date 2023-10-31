@@ -61,7 +61,8 @@ cd Human-Detector-and-Tracker
   ```
 
 ## Outputs
-![Alt Text](Phase0\output.gif)
+<!-- ![Output](Phase0/output.gif) -->
+![alt text](phase0/output.gif?raw=true)
 
 ## Links
 

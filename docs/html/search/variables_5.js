@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['object_5fheight_5f_82',['object_height_',['../classacme__robotics_1_1Detector.html#af4db7674f191549bc4e98ebed91b1f45',1,'acme_robotics::Detector']]],
-  ['object_5fwidth_5f_83',['object_width_',['../classacme__robotics_1_1Detector.html#a984788c546f558ce0e1141ed4d202d9d',1,'acme_robotics::Detector']]]
+  ['scale_43',['SCALE',['../classBbox.html#ab3ff5d3c027a2810333bf839a9f56a15',1,'Bbox']]],
+  ['score_44',['SCORE',['../classPostprocess.html#a98c77ab6893099f3cec4572f569a6819',1,'Postprocess']]],
+  ['style_45',['STYLE',['../classBbox.html#afbf1892b1668c8936bf153438f14d5ae',1,'Bbox']]]
 ];

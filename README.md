@@ -1,8 +1,8 @@
-# HUMAN OBSTACLE DETECTOR AND TRACKER 
+# HUMAN DETECTOR AND TRACKER 
 
 ## ENPM 808X Mid-term Project
 ![CICD Workflow status](https://github.com/saiteja12-g/Human-Detector-and-Tracker/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)
-[![codecov](https://codecov.io/gh/saiteja12-g/Human-Detector-and-Tracker/branch/development_branch/graph/badge.svg)](https://codecov.io/gh/saiteja12-g/Human-Detector-and-Tracker)
+[![codecov](https://codecov.io/gh/saiteja12-g/Human-Detector-and-Tracker/branch/development_branch_v2/graph/badge.svg)](https://codecov.io/gh/saiteja12-g/Human-Detector-and-Tracker)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Student Details
@@ -23,27 +23,46 @@ The goal of this project is detect and track humans and get the pose estimation 
 |---|:---:|
 |C++|14|
 |OpenCV|Default|
+|memory|Default|
 
-## Instructions to run the program locally
+## Instructions to run the code
 
-## Standard install and build via command-line
-```
-git clone --recursive https://github.com/saiteja12-g/Human-Detector-and-Tracker.git
+#### Navigate to the repository: 
+
+```  
 cd Human-Detector-and-Tracker
-cmake -S ./ -B build/
-cmake --build build/
-./build/app/shell-app
 ```
+#### Configure the project and generate a native build system:
+  #### Must re-run this command whenever any CMakeLists.txt file has been changed.
+  ```
+  mkdir build/ && cd build/
+  ```
 
-## Run tests
-```
-ctest --test-dir build/
-```
+#### Compile and build the project:
+  #### rebuild only files that are modified since the last build
+  ```
+  cmake ..
+  make
+  ```
+#### Run tests:
+  ```
+  ./test/human-detector-tracker-test
+  ```
 
-## Create Doxygen docs
-```
-cmake --build build/ --target docs
-``` 
+#### Try out the live feed:
+  ```
+  ./app/human-detector-tracker
+  ```
+
+#### Create Doxygen docs
+  ```
+  cd ..
+  cmake --build build/ --target docs
+  ```
+
+## Outputs
+<!-- ![Output](Phase0/output.gif) -->
+![alt text](phase0/output.gif?raw=true)
 
 ## Links
 
@@ -51,7 +70,7 @@ cmake --build build/ --target docs
 |---|:---:|
 |Project Proposal Document|[here](/Proposal/Project_Proposal.pdf)|
 |Quad Chart|[here](/Proposal/quad%20chart.pdf)|
-|UML Diagram|[here](/UML/initial/UML%20class.pdf)|
+|UML Diagram|[here](/UML/revised/Revised%20UML_diagram.pdf)|
 |Flow Chart|[here](/Proposal/Flowchart.pdf)|
 |AIP Sheet|[here](https://docs.google.com/spreadsheets/u/0/d/1XzHJKPvlp2NBZCuSRj7cfIvq3t03doPlDkwKnDLFQbU/edit?pli=1#gid=1967651968)|
 |Videos|[here](https://drive.google.com/drive/folders/1_GK_JMNFahxSQeobAj8jg4wJFANAf9b8?usp=sharing)|

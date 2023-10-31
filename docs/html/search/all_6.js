@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['input_5fheight_5f_14',['input_height_',['../classacme__robotics_1_1Detector.html#a14fb8b36b122e8e087b90297ff8cdbba',1,'acme_robotics::Detector']]],
-  ['input_5fwidth_5f_15',['input_width_',['../classacme__robotics_1_1Detector.html#aa43c68928fca377eaf90bfd4d4df822a',1,'acme_robotics::Detector']]]
+  ['readclassnames_17',['ReadClassNames',['../main_8cpp.html#a35c619b2de9be08f0042daaa8af2da5f',1,'main.cpp']]],
+  ['red_18',['RED',['../classPostprocess.html#a3283aa12e98c014f3e218f4b29056c47',1,'Postprocess']]]
 ];

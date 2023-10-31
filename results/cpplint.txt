@@ -1,7 +1,3 @@
-Done processing ./app/detector.cpp
 Done processing ./app/main.cpp
-Done processing ./app/pose_estimater.cpp
-Done processing ./app/tracker.cpp
-Done processing ./app/utils.cpp
 Done processing ./test/main.cpp
 Done processing ./test/test.cpp

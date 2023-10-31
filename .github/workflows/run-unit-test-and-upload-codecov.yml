@@ -36,6 +36,12 @@ jobs:
     steps:
       # We want to use GitHub CI checkout version 3 to check out our branch
       - uses: actions/checkout@v3
+
+      # Install OpenCV
+      - name: install opencv 
+        run: |   
+            sudo apt-get install libopencv-dev 
+            sudo apt-get install libopencv-contrib-dev
       
       # Install some system pacakges
       - name: Install build packages
@@ -49,7 +55,20 @@ jobs:
         run: |
           cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
           cmake --build build/ --clean-first --target all test_coverage
+          
+      
 
+      # # Compile and executables
+      # - name: Build Coverage
+      #   working-directory: ${{github.workspace}}/build
+      #   run: make
+
+      # # Run test suite and compute code coverage
+      # - name: Run Test Coverage
+      #   working-directory: ${{github.workspace}}/build
+      #   run: make code_coverage
+
+     
       # Upload coverage result to CodeCov
       - name: Upload coverage result to CodeCov
         uses: codecov/codecov-action@v3
@@ -57,5 +76,4 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ${{github.workspace}}/build/test_coverage.info
           fail_ci_if_error: true # optional (default = false)
-          verbose: true # optional (default = false)      
-          
+          verbose: true # optional (default = false)   

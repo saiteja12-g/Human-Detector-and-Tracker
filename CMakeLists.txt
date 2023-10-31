@@ -30,13 +30,35 @@ add_subdirectory(test)
 add_subdirectory(vendor/googletest/googletest)
 
 find_package(Doxygen)
-if (DOXYGEN_FOUND)
-    set(DOXYGEN_EXECUTABLE "doxygen")
-    set(DOXYGEN_CONF "${CMAKE_SOURCE_DIR}/Doxyfile")
-    add_custom_target( doc
-        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_CONF}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-        COMMENT "Generating API documentation with Doxygen")
-else (DOXYGEN_FOUND)
-  message("Doxygen need to be installed to generate the doxygen documentation")
-endif (DOXYGEN_FOUND)
+if ( DOXYGEN_FOUND )
+  set( DOXYGEN_OUTPUT_DIRECTORY     ${PROJECT_SOURCE_DIR}/docs )
+  set( DOXYGEN_COLLABORATION_GRAPH  YES )
+  set( DOXYGEN_EXTRACT_ALL          YES )
+  set( DOXYGEN_CLASS_DIAGRAMS       YES )
+  set( DOXYGEN_HIDE_UNDOC_RELATIONS NO )
+  set( DOXYGEN_HAVE_DOT             YES )
+  set( DOXYGEN_CLASS_GRAPH          YES )
+  set( DOXYGEN_CALL_GRAPH           YES )
+  set( DOXYGEN_CALLER_GRAPH         YES )
+  set( DOXYGEN_COLLABORATION_GRAPH  YES )
+  set( DOXYGEN_BUILTIN_STL_SUPPORT  YES )
+  set( DOXYGEN_EXTRACT_PRIVATE      YES )
+  set( DOXYGEN_EXTRACT_PACKAGE      YES )
+  set( DOXYGEN_EXTRACT_STATIC       YES )
+  set( DOXYGEN_EXTRACT_LOCALMETHODS YES )
+  set( DOXYGEN_UML_LOOK             YES )
+  set( DOXYGEN_UML_LIMIT_NUM_FIELDS 50 )
+  set( DOXYGEN_TEMPLATE_RELATIONS   YES )
+  set( DOXYGEN_DOT_GRAPH_MAX_NODES  100 )
+  set( DOXYGEN_MAX_DOT_GRAPH_DEPTH  0 )
+  set( DOXYGEN_DOT_TRANSPARENT      YES )
+else()
+  message( FATAL_ERROR "Doxygen needs to be installed to generate the doxygen documentation" )
+endif()
+
+# create a target to build documentation
+doxygen_add_docs(docs           # target name
+  # List of files or directories
+  ${PROJECT_SOURCE_DIR}/app
+  ${PROJECT_SOURCE_DIR}/include
+  )

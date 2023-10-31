@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Main function implementation for loading the object detection class list. Takes the live video feed f..." alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node2" href="$classPostprocess.html#a39b32dee0c944bfcc48656d355fa249c" title="The retrieved video frame, detection outputs and eteciton class list are provided as input to this fu..." alt="" coords="108,5,301,32"/>
+<area shape="rect" id="node4" href="$classPreprocess.html#ae2e3bb07744dab853fdc43bea7ef62d5" title="Retrieved video frame is provided as input to yolov5s model and detections are extracted for post&#45;pro..." alt="" coords="115,56,294,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a35c619b2de9be08f0042daaa8af2da5f" title="Function to read class names from the file." alt="" coords="137,107,273,133"/>
+<area shape="rect" id="node3" href="$classBbox.html#a752462de85ff0cfa66679be9e8fe9175" title="Assigns label with class ID, draws a bounding box around the detected object." alt="" coords="349,5,444,32"/>
+</map>

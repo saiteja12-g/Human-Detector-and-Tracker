@@ -56,6 +56,7 @@ cd Human-Detector-and-Tracker
 
 #### Create Doxygen docs
   ```
+  cd ..
   cmake --build build/ --target docs
   ```
 

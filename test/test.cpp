@@ -17,6 +17,7 @@
 
 #include "./../include/bbox.hpp"
 #include "./../include/post_process.hpp"
+#include "./../app/post_process.cpp"
 #include "./../include/pre_process.hpp"
 
 cv::Mat img1 = cv::imread("./../app/resources/sample1.jpg");

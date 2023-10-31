@@ -110,7 +110,10 @@ if(WANT_COVERAGE)
     EXECUTABLE ctest     # what to run insdie the build directory?
     EXCLUDE
       "app/main.cpp"     # Unit test does not run app, so don't analyze it
+      "app/post_process.cpp"     # Unit test does not run app, so don't analyze it
       "*gtest*"          # Don't analyze googleTest code
+      "include/post_process.hpp"
+      "include/pre_process.hpp"
       "/usr/include/*"   # Don't analyze system headers
     )
 

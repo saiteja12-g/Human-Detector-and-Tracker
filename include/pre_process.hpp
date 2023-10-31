@@ -1,8 +1,9 @@
 #ifndef INCLUDE_PRE_PROCESS_HPP_
 #define INCLUDE_PRE_PROCESS_HPP_
 
-#include <opencv2/opencv.hpp>
 #include <vector>
+
+#include <opencv2/opencv.hpp>
 
 class Preprocess {
  public:

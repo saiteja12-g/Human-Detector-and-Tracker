@@ -2,7 +2,8 @@
 //  * @file post_process.hpp
 //  * @author Akashkumar Parmar (akasparm@umd.edu)
 //  * @author Sai Teja Gilukara (saitejag@umd.edu)
-//  * @brief Class declaration for Postprocess - post processing of the image frame
+//  * @brief Class declaration for Postprocess - post processing of the image
+//  frame
 //  * @version 0.1
 //  * @date 2023-10-31
 //  *
@@ -22,8 +23,10 @@
 // #include "./../include/pre_process.hpp"
 
 // /**
-//  * @brief Postprocess class defines the outline for postprocessing input frame
-//  * based on provided detections and providing resulting image to main function.
+//  * @brief Postprocess class defines the outline for postprocessing input
+//  frame
+//  * based on provided detections and providing resulting image to main
+//  function.
 //  *
 //  */
 // class Postprocess : public Preprocess, public Bbox {
@@ -36,7 +39,8 @@
 
 //  public:
 //   /**
-//    * @brief The retrieved video frame, detection outputs and eteciton class list
+//    * @brief The retrieved video frame, detection outputs and eteciton class
+//    list
 //    * are provided as input to this function. Using these inputs it gives the
 //    * confidence level and thresholds filters unwated detections.
 //    *
@@ -126,7 +130,6 @@
 
 // #endif  // INCLUDE_POST_PROCESS_HPP_
 
-
 /**
  * @file post_process.hpp
  * @author Akashkumar Parmar (akasparm@umd.edu)
@@ -142,8 +145,9 @@
 #define INCLUDE_POST_PROCESS_HPP_
 
 #include <opencv2/opencv.hpp>
-#include <vector>
 #include <string>
+#include <vector>
+
 #include "bbox.hpp"
 #include "pre_process.hpp"
 

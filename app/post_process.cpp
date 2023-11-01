@@ -2,18 +2,20 @@
  * @file post_process.cpp
  * @author Akashkumar Parmar (akasparm@umd.edu)
  * @author Sai Teja Gilukara (saitejag@umd.edu)
- * @brief Class implementation for Postprocess - post processing of the image frame
+ * @brief Class implementation for Postprocess - post processing of the image
+ * frame
  * @version 0.1
  * @date 2023-10-31
  *
  * @copyright Copyright (c) 2023
- */open build/test_coverage/index.html
+ */ 
 
 #include "../include/post_process.hpp"
 
-cv::Mat Postprocess::post_process(cv::Mat instantaneous_frame,
-                                  std::vector<cv::Mat> preprocess_outputs,
-                                  std::vector<std::string> class_name) {
+  cv::Mat
+  Postprocess::post_process(cv::Mat instantaneous_frame,
+                            std::vector<cv::Mat> preprocess_outputs,
+                            std::vector<std::string> class_name) {
   std::vector<int> class_ids;
   std::vector<float> confidence_list;
   std::vector<cv::Rect> bounding_boxes;

@@ -30,23 +30,37 @@ The goal of this project is detect and track humans and get the pose estimation 
 #### Navigate to the repository: 
 
 ```  
+git clone --recursive https://github.com/saiteja12-g/Human-Detector-and-Tracker.git
 cd Human-Detector-and-Tracker
 ```
 #### Configure the project and generate a native build system:
   #### Must re-run this command whenever any CMakeLists.txt file has been changed.
   ```
   cmake -S ./ -B build/
+
+  # turning on code coverage
+  cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
   ```
 
 #### Compile and build the project:
   #### rebuild only files that are modified since the last build
   ```
-  cmake --build build/
+  cmake --build build/ --clean-first --target all test_coverage
+
+  # open test coverage report
+  open build/test_coverage/index.html
   ```
 #### Run tests:
   ```
   ctest --test-dir build/
   ```
+
+#### cpplint and cppcheck:
+```
+cppcheck --enable=all --std=c++11 -I include/ --suppress=missingInclude $( find . -name *.cpp | grep -vE -e "^./build/" )
+
+cpplint --filter="-legal/copyright" $( find . -name *.cpp | grep -vE -e "^./build/" )
+```
 
 #### Try out the live feed:
   ```
@@ -61,6 +75,10 @@ cd Human-Detector-and-Tracker
 ## Outputs
 <!-- ![Output](Phase0/output.gif) -->
 ![alt text](Phase0/output.gif)
+
+## Conclusion
+
+In conclusion, The model is successfully identifying the humans and continuously tracking them frame by frame. TWe have completed the core objective for human detection and tracking, achieving the core objectives we set out to conquer.
 
 ## Links
 
